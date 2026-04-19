@@ -65,7 +65,7 @@ export const Route = createFileRoute("/produit/$slug")({
       scripts: [{ type: "application/ld+json", children: productJsonLd }],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): Product => {
     const p = products.find((x) => x.slug === params.slug);
     if (!p) throw notFound();
     return p;
