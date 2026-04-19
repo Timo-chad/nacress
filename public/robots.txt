@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /panier
+
+Sitemap: https://nacress.com/sitemap.xml

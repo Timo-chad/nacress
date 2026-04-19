@@ -1,0 +1,27 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
+import { CartProvider } from "./context/CartContext";
+import { CartToast } from "./components/CartToast";
+import "./styles.css";
+
+const router = createRouter({
+  routeTree,
+  scrollRestoration: true,
+});
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <CartProvider>
+      <RouterProvider router={router} />
+      <CartToast />
+    </CartProvider>
+  </React.StrictMode>
+);

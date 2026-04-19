@@ -1,0 +1,82 @@
+import { createFileRoute, notFound } from "@tanstack/react-router";
+import { ProductDetail } from "@/components/ProductDetail";
+import { products } from "@/data/products";
+
+export const Route = createFileRoute("/produit/$slug")({
+  head: ({ params }) => {
+    const p = products.find((x) => x.slug === params.slug);
+    if (!p) return {};
+
+    const productJsonLd = JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          name: p.name,
+          description: p.descriptionFull,
+          image: `https://nacress.com${p.img}`,
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: p.priceRaw,
+            availability: "https://schema.org/InStock",
+            url: `https://nacress.com/produit/${p.slug}`,
+          },
+          brand: { "@type": "Brand", name: "NACRESS" },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Accueil",
+              item: "https://nacress.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Collections",
+              item: "https://nacress.com/#collections",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: p.name,
+              item: `https://nacress.com/produit/${p.slug}`,
+            },
+          ],
+        },
+      ],
+    });
+
+    return {
+      meta: [
+        { title: `${p.name} — NACRESS` },
+        { name: "description", content: p.descriptionFull },
+        { property: "og:title", content: `${p.name} — NACRESS` },
+        { property: "og:description", content: p.descriptionFull },
+        { property: "og:type", content: "product" },
+        { property: "og:url", content: `https://nacress.com/produit/${p.slug}` },
+      ],
+      links: [
+        { rel: "canonical", href: `https://nacress.com/produit/${p.slug}` },
+      ],
+      scripts: [{ type: "application/ld+json", children: productJsonLd }],
+    };
+  },
+  loader: ({ params }) => {
+    const p = products.find((x) => x.slug === params.slug);
+    if (!p) throw notFound();
+    return p;
+  },
+  component: function ProductPage() {
+    const product = Route.useLoaderData();
+    return (
+      <ProductDetail
+        product={product}
+        onClose={() => window.history.back()}
+      />
+    );
+  },
+});

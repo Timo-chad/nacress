@@ -1,0 +1,15 @@
+{
+  "name": "NACRESS",
+  "short_name": "NACRESS",
+  "description": "Bijoux inspirés de l'océan. Collection Printemps 2026.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#E8E0D0",
+  "theme_color": "#E8E0D0",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicon.svg",  "sizes": "any",     "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
