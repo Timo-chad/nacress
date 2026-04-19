@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ProductDetail } from "@/components/ProductDetail";
-import { products } from "@/data/products";
+import { products, type Product } from "@/data/products";
 
 export const Route = createFileRoute("/produit/$slug")({
   head: ({ params }) => {
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/produit/$slug")({
     return p;
   },
   component: function ProductPage() {
-    const product = Route.useLoaderData();
+    const product = Route.useLoaderData() as Product;
     return (
       <ProductDetail
         product={product}
