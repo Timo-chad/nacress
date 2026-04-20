@@ -55,8 +55,8 @@ export const products: Product[] = [
     id: 2,
     slug: "bague-onde-nacree",
     name: "Bague Onde Nacrée",
-    price: "€75",
-    priceRaw: 75,
+    price: "€67",
+    priceRaw: 67,
     tagline: "Volume sculpté",
     description: "Anneau ouvert ajustable en laiton plaqué or, rehaussé d'émail blanc nacré aux reflets opalins.",
     descriptionFull:
@@ -68,8 +68,8 @@ export const products: Product[] = [
     id: 3,
     slug: "creoles-perle-eau",
     name: "Créoles Perle d'Eau",
-    price: "€85",
-    priceRaw: 85,
+    price: "€55",
+    priceRaw: 55,
     tagline: "Suspension délicate",
     description: "Petites créoles en acier inoxydable plaqué or, prolongées d'une perle de culture en pendentif.",
     descriptionFull:
@@ -81,8 +81,8 @@ export const products: Product[] = [
     id: 4,
     slug: "bracelet-perle-unique",
     name: "Bracelet Perle Unique",
-    price: "€65",
-    priceRaw: 65,
+    price: "€75",
+    priceRaw: 75,
     tagline: "Trait de lumière",
     description: "Fine chaîne plaquée or, perle de culture centrale et breloque en zircon cubique.",
     descriptionFull:

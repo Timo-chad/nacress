@@ -10,8 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PanierRouteImport } from './routes/panier'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as HistoireRouteImport } from './routes/histoire'
+import { Route as ConformiteRouteImport } from './routes/conformite'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
+import { Route as CgvRouteImport } from './routes/cgv'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProduitSlugRouteImport } from './routes/produit.$slug'
 
@@ -20,14 +23,29 @@ const PanierRoute = PanierRouteImport.update({
   path: '/panier',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HistoireRoute = HistoireRouteImport.update({
   id: '/histoire',
   path: '/histoire',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConformiteRoute = ConformiteRouteImport.update({
+  id: '/conformite',
+  path: '/conformite',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConfirmationRoute = ConfirmationRouteImport.update({
   id: '/confirmation',
   path: '/confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CgvRoute = CgvRouteImport.update({
+  id: '/cgv',
+  path: '/cgv',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,44 +61,75 @@ const ProduitSlugRoute = ProduitSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cgv': typeof CgvRoute
   '/confirmation': typeof ConfirmationRoute
+  '/conformite': typeof ConformiteRoute
   '/histoire': typeof HistoireRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/panier': typeof PanierRoute
   '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cgv': typeof CgvRoute
   '/confirmation': typeof ConfirmationRoute
+  '/conformite': typeof ConformiteRoute
   '/histoire': typeof HistoireRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/panier': typeof PanierRoute
   '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cgv': typeof CgvRoute
   '/confirmation': typeof ConfirmationRoute
+  '/conformite': typeof ConformiteRoute
   '/histoire': typeof HistoireRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/panier': typeof PanierRoute
   '/produit/$slug': typeof ProduitSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/confirmation' | '/histoire' | '/panier' | '/produit/$slug'
+  fullPaths:
+    | '/'
+    | '/cgv'
+    | '/confirmation'
+    | '/conformite'
+    | '/histoire'
+    | '/mentions-legales'
+    | '/panier'
+    | '/produit/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/confirmation' | '/histoire' | '/panier' | '/produit/$slug'
+  to:
+    | '/'
+    | '/cgv'
+    | '/confirmation'
+    | '/conformite'
+    | '/histoire'
+    | '/mentions-legales'
+    | '/panier'
+    | '/produit/$slug'
   id:
     | '__root__'
     | '/'
+    | '/cgv'
     | '/confirmation'
+    | '/conformite'
     | '/histoire'
+    | '/mentions-legales'
     | '/panier'
     | '/produit/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CgvRoute: typeof CgvRoute
   ConfirmationRoute: typeof ConfirmationRoute
+  ConformiteRoute: typeof ConformiteRoute
   HistoireRoute: typeof HistoireRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   PanierRoute: typeof PanierRoute
   ProduitSlugRoute: typeof ProduitSlugRoute
 }
@@ -94,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PanierRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/histoire': {
       id: '/histoire'
       path: '/histoire'
@@ -101,11 +157,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HistoireRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conformite': {
+      id: '/conformite'
+      path: '/conformite'
+      fullPath: '/conformite'
+      preLoaderRoute: typeof ConformiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/confirmation': {
       id: '/confirmation'
       path: '/confirmation'
       fullPath: '/confirmation'
       preLoaderRoute: typeof ConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cgv': {
+      id: '/cgv'
+      path: '/cgv'
+      fullPath: '/cgv'
+      preLoaderRoute: typeof CgvRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -127,8 +197,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CgvRoute: CgvRoute,
   ConfirmationRoute: ConfirmationRoute,
+  ConformiteRoute: ConformiteRoute,
   HistoireRoute: HistoireRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   PanierRoute: PanierRoute,
   ProduitSlugRoute: ProduitSlugRoute,
 }
