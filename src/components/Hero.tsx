@@ -13,7 +13,7 @@ export function Hero() {
         </span>
 
         <h1
-          className="font-serif-display text-foreground text-6xl md:text-8xl lg:text-9xl tracking-luxury uppercase text-sand-shadow animate-nacress-fade-up"
+          className="font-serif-display text-foreground text-[13vw] md:text-8xl lg:text-9xl tracking-luxury uppercase text-sand-shadow animate-nacress-fade-up"
           style={{ animationDelay: "120ms", fontWeight: 500 }}
         >
           NACRESS

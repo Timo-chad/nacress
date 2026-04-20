@@ -98,7 +98,7 @@ export function CartPage() {
           <ArrowLeft className="w-4 h-4" strokeWidth={1.25} />
           Continuer mes achats
         </Link>
-        <span className="font-serif-display text-xl tracking-luxury uppercase text-foreground">NACRESS</span>
+        <span className="hidden md:block font-serif-display text-xl tracking-luxury uppercase text-foreground">NACRESS</span>
         <span className="text-[11px] tracking-luxury uppercase text-foreground/60">
           {count} article{count > 1 ? "s" : ""}
         </span>

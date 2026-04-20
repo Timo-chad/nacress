@@ -78,8 +78,8 @@ function ProductSlide({
         {/* Image principale */}
         <motion.div
           data-img
-          style={{ scale, y: imgY, order: isReversed ? 2 : 1, willChange: "transform" }}
-          className="relative aspect-[4/5] w-full max-w-[460px] mx-auto"
+          style={{ scale, y: imgY, willChange: "transform" }}
+          className={`relative aspect-[4/5] w-full max-w-[460px] mx-auto order-1 ${isReversed ? "md:order-2" : "md:order-1"}`}
         >
           <img
             src={product.img}
@@ -94,8 +94,8 @@ function ProductSlide({
         {/* Texte */}
         <motion.div
           data-text
-          style={{ y: textY, order: isReversed ? 1 : 2, willChange: "transform" }}
-          className="text-center md:text-left"
+          style={{ y: textY, willChange: "transform" }}
+          className={`text-center md:text-left order-2 ${isReversed ? "md:order-1" : "md:order-2"}`}
         >
           <span className="block text-[10px] tracking-luxury uppercase text-foreground/60 mb-5 text-sand-shadow">
             Pièce {String(index + 1).padStart(2, "0")} — {product.tagline}
