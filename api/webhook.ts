@@ -5,11 +5,12 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export const config = { api: { bodyParser: false } };
 
-function getRawBody(req: VercelRequest): Promise<Buffer> {
+function getRawBody(req: VercelRequest): Promise<string> {
   return new Promise((resolve, reject) => {
-    const chunks: Buffer[] = [];
-    req.on("data", (c) => chunks.push(Buffer.from(c)));
-    req.on("end", () => resolve(Buffer.concat(chunks)));
+    const chunks: string[] = [];
+    req.setEncoding("utf8");
+    req.on("data", (c: string) => chunks.push(c));
+    req.on("end", () => resolve(chunks.join("")));
     req.on("error", reject);
   });
 }
