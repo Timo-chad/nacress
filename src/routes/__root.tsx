@@ -27,17 +27,17 @@ const JSON_LD_GLOBAL = JSON.stringify({
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://nacress.com/#website",
-      "url": "https://nacress.com/",
+      "@id": "https://nacress.fr/#website",
+      "url": "https://nacress.fr/",
       "name": "NACRESS",
       "inLanguage": "fr-FR",
     },
     {
       "@type": "Organization",
-      "@id": "https://nacress.com/#organization",
+      "@id": "https://nacress.fr/#organization",
       "name": "NACRESS",
-      "url": "https://nacress.com/",
-      "logo": "https://nacress.com/icon-512.png",
+      "url": "https://nacress.fr/",
+      "logo": "https://nacress.fr/icon-512.png",
       "description": "Bijoux inspirés de l'océan. Collection Printemps 2026.",
     },
   ],

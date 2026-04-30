@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /panier
 
-Sitemap: https://nacress.com/sitemap.xml
+Sitemap: https://nacress.fr/sitemap.xml

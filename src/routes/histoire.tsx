@@ -11,7 +11,7 @@ export const Route = createFileRoute("/histoire")({
           "L'histoire de NACRESS, née au bord de l'océan. Découvrez l'inspiration derrière nos bijoux côtiers.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://nacress.com/histoire" }],
+    links: [{ rel: "canonical", href: "https://nacress.fr/histoire" }],
   }),
   component: Histoire,
 });

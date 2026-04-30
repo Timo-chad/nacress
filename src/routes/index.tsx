@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
           "Bijoux inspirés de l'océan. Nacre, perles cultivées et or recyclé. Collection Printemps 2026.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://nacress.com/" }],
+    links: [{ rel: "canonical", href: "https://nacress.fr/" }],
   }),
   component: Index,
 });
