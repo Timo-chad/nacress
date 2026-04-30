@@ -22,7 +22,7 @@ export default defineConfig({
       webp: { lossless: false, quality: 80 },
     }),
     sitemap({
-      hostname: "https://nacress.com",
+      hostname: "https://nacress.fr",
       dynamicRoutes: [
         "/",
         "/histoire",

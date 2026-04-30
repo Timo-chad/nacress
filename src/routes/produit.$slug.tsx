@@ -50,12 +50,14 @@ export const Route = createFileRoute("/produit/$slug")({
       ],
     });
 
+    const metaDesc = `${p.name} — bijou nacre NACRESS. ${p.descriptionFull.slice(0, 120)} Livraison offerte en France.`;
     return {
       meta: [
-        { title: `${p.name} — NACRESS` },
-        { name: "description", content: p.descriptionFull },
-        { property: "og:title", content: `${p.name} — NACRESS` },
-        { property: "og:description", content: p.descriptionFull },
+        { title: `${p.name} — Bijou Nacre NACRESS | Coastal Luxury` },
+        { name: "description", content: metaDesc },
+        { name: "keywords",    content: `${p.name.toLowerCase()}, bijou nacre, bijoux côtiers, NACRESS, ${p.tagline.toLowerCase()}, perle, nacre` },
+        { property: "og:title", content: `${p.name} — Bijou Nacre NACRESS` },
+        { property: "og:description", content: metaDesc },
         { property: "og:type", content: "product" },
         { property: "og:url", content: `https://nacress.fr/produit/${p.slug}` },
       ],

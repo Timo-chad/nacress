@@ -60,7 +60,7 @@ export function ProductDetail({ product, onClose }: Props) {
             <div key={i} className="aspect-[3/4] overflow-hidden rounded-sm bg-muted">
               <img
                 src={src}
-                alt={`${product.name} — vue ${i + 1}`}
+                alt={`${product.name} — bijou nacre NACRESS — vue ${i + 1}`}
                 className="w-full h-full object-cover"
               />
             </div>

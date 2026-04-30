@@ -4,7 +4,7 @@ export function PoeticSection() {
   return (
     <section id="histoire" className="relative py-16 md:py-24 px-6">
       <div className="max-w-3xl mx-auto text-center reading-veil rounded-sm px-8 py-10 md:px-16 md:py-14">
-        <motion.span
+        <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-15%" }}
@@ -13,7 +13,7 @@ export function PoeticSection() {
           style={{ letterSpacing: "0.4em" }}
         >
           La Nacre & l'Océan
-        </motion.span>
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 24 }}

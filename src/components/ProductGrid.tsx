@@ -83,7 +83,7 @@ function ProductSlide({
         >
           <img
             src={product.img}
-            alt={product.name}
+            alt={`${product.name} — bijou nacre NACRESS, ${product.tagline.toLowerCase()}`}
             loading={index === 0 ? "eager" : "lazy"}
             decoding="async"
             className="w-full h-full object-contain mix-blend-multiply"
