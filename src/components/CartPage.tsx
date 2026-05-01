@@ -227,6 +227,19 @@ export function CartPage() {
                 )}
               </p>
 
+              {/* Notice précommande */}
+              <div
+                className="rounded-sm px-4 py-3.5 flex flex-col gap-1.5"
+                style={{ backgroundColor: "oklch(0.94 0.018 88)", border: "1px solid oklch(0.86 0.018 80)" }}
+              >
+                <p className="text-[10px] tracking-luxury uppercase font-medium text-foreground/70">
+                  Précommande — Prix réduit de 20%
+                </p>
+                <p className="text-[11px] text-foreground/60 leading-relaxed">
+                  Chaque bijou NACRESS est façonné à la main. En précommandant, vous bénéficiez d'un tarif préférentiel en échange d'un délai de confection estimé à <strong className="text-foreground/80">1 à 2 mois</strong> avant expédition.
+                </p>
+              </div>
+
               <p className="text-[10px] text-foreground/50 leading-relaxed">
                 Vous serez redirigé vers la page de paiement sécurisée Stripe.
               </p>
@@ -246,7 +259,7 @@ export function CartPage() {
                 ) : (
                   <Lock className="w-3.5 h-3.5" strokeWidth={2} />
                 )}
-                {loading ? "Redirection…" : "Payer en sécurité"}
+                {loading ? "Redirection…" : "Précommander — Payer en sécurité"}
               </button>
 
               <p className="flex items-center justify-center gap-1.5 text-[9px] text-foreground/35 tracking-wide mt-1">

@@ -30,6 +30,8 @@ export interface Product {
   name: string;
   price: string;
   priceRaw: number;
+  priceOriginal: string;
+  priceOriginalRaw: number;
   tagline: string;
   description: string;
   descriptionFull: string;
@@ -42,8 +44,10 @@ export const products: Product[] = [
     id: 1,
     slug: "collier-perle-solitaire",
     name: "Collier Perle Solitaire",
-    price: "€95",
-    priceRaw: 95,
+    price: "€76",
+    priceRaw: 76,
+    priceOriginal: "€95",
+    priceOriginalRaw: 95,
     tagline: "Pièce essentielle",
     description: "Chaîne en acier inoxydable plaqué or, ornée d'une unique perle de culture d'eau douce.",
     descriptionFull:
@@ -55,8 +59,10 @@ export const products: Product[] = [
     id: 2,
     slug: "bague-onde-nacree",
     name: "Bague Onde Nacrée",
-    price: "€67",
-    priceRaw: 67,
+    price: "€54",
+    priceRaw: 54,
+    priceOriginal: "€67",
+    priceOriginalRaw: 67,
     tagline: "Volume sculpté",
     description: "Anneau ouvert ajustable en laiton plaqué or, rehaussé d'émail blanc nacré aux reflets opalins.",
     descriptionFull:
@@ -68,8 +74,10 @@ export const products: Product[] = [
     id: 3,
     slug: "creoles-perle-eau",
     name: "Créoles Perle d'Eau",
-    price: "€55",
-    priceRaw: 55,
+    price: "€44",
+    priceRaw: 44,
+    priceOriginal: "€55",
+    priceOriginalRaw: 55,
     tagline: "Suspension délicate",
     description: "Petites créoles en acier inoxydable plaqué or, prolongées d'une perle de culture en pendentif.",
     descriptionFull:
@@ -81,8 +89,10 @@ export const products: Product[] = [
     id: 4,
     slug: "bracelet-perle-unique",
     name: "Bracelet Perle Unique",
-    price: "€75",
-    priceRaw: 75,
+    price: "€60",
+    priceRaw: 60,
+    priceOriginal: "€75",
+    priceOriginalRaw: 75,
     tagline: "Trait de lumière",
     description: "Fine chaîne plaquée or, perle de culture centrale et breloque en zircon cubique.",
     descriptionFull:
@@ -94,8 +104,10 @@ export const products: Product[] = [
     id: 5,
     slug: "bracelet-constellation",
     name: "Bracelet Constellation",
-    price: "€80",
-    priceRaw: 80,
+    price: "€64",
+    priceRaw: 64,
+    priceOriginal: "€80",
+    priceOriginalRaw: 80,
     tagline: "Sept perles, sept reflets",
     description: "Chaîne maille forçat en acier inoxydable plaqué or, ponctuée de sept perles d'imitation lumineuses.",
     descriptionFull:
@@ -107,8 +119,10 @@ export const products: Product[] = [
     id: 6,
     slug: "chaine-cheville-rivage",
     name: "Chaîne de Cheville Rivage",
-    price: "€70",
-    priceRaw: 70,
+    price: "€56",
+    priceRaw: 56,
+    priceOriginal: "€70",
+    priceOriginalRaw: 70,
     tagline: "Souvenir de plage",
     description: "Chaîne de cheville plaquée or, perles d'imitation, breloques coquillage, étoile de mer et nacre.",
     descriptionFull:

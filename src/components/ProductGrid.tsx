@@ -107,7 +107,18 @@ function ProductSlide({
             {product.description}
           </p>
           <div className="flex items-center justify-center md:justify-start gap-8">
-            <span className="text-sm tracking-wide-soft text-foreground/80">{product.price}</span>
+            <div className="flex flex-col items-center md:items-start gap-0.5">
+              <span
+                className="text-[9px] tracking-luxury uppercase font-medium px-1.5 py-0.5 rounded-sm"
+                style={{ backgroundColor: "oklch(0.78 0.11 220)", color: "oklch(0.18 0.03 220)" }}
+              >
+                Précommande −20%
+              </span>
+              <div className="flex items-baseline gap-2">
+                <span className="font-serif-display text-lg text-foreground">{product.price}</span>
+                <span className="text-xs text-foreground/40 line-through">{product.priceOriginal}</span>
+              </div>
+            </div>
             <button
               onClick={handleDiscover}
               disabled={isAnimating}

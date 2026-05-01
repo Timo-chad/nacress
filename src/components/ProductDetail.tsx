@@ -86,10 +86,26 @@ export function ProductDetail({ product, onClose }: Props) {
             </p>
           </div>
 
-          <div className="flex flex-col items-start md:items-end gap-6 shrink-0">
-            <span className="font-serif-display text-3xl text-foreground">
-              {product.price}
-            </span>
+          <div className="flex flex-col items-start md:items-end gap-5 shrink-0">
+            {/* Prix précommande */}
+            <div className="flex flex-col items-start md:items-end gap-1.5">
+              <span
+                className="text-[9px] tracking-luxury uppercase font-medium px-2 py-0.5 rounded-sm"
+                style={{ backgroundColor: "oklch(0.78 0.11 220)", color: "oklch(0.18 0.03 220)" }}
+              >
+                Précommande −20%
+              </span>
+              <div className="flex items-baseline gap-3">
+                <span className="font-serif-display text-3xl text-foreground">{product.price}</span>
+                <span className="text-base text-foreground/40 line-through">{product.priceOriginal}</span>
+              </div>
+            </div>
+
+            {/* Notice précommande */}
+            <p className="text-[10px] text-foreground/55 leading-relaxed md:text-right max-w-[200px]">
+              Pièce façonnée à la main — livraison estimée sous 1 à 2 mois.
+            </p>
+
             <button
               onClick={() => addItem(product)}
               className="inline-flex items-center gap-3 px-8 py-3.5 text-[11px] tracking-luxury uppercase font-medium rounded-sm transition-all duration-300 hover:brightness-90"
@@ -99,7 +115,7 @@ export function ProductDetail({ product, onClose }: Props) {
               }}
             >
               <ShoppingBag className="w-4 h-4" strokeWidth={1.5} />
-              Ajouter au panier
+              Précommander
             </button>
           </div>
         </motion.div>
